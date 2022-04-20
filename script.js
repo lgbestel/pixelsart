@@ -31,7 +31,7 @@ function squarePalette () {
 
 function createPixelBoard (lines, columns) {
 
-    for(let icol = 0; icol < columns; icol += 1) {
+    for(let icol = 0; icol < lines; icol += 1) {
         let pixelBoard = document.querySelector('#pixel-board');
         let createPixelLine = document.createElement('div');
         createPixelLine.className = 'pixel-line';
@@ -41,7 +41,7 @@ function createPixelBoard (lines, columns) {
         // createPixelLine.style.height = '40px';
         createPixelLine.style.width = 'auto';
 
-        for (let iline = 0; iline < lines; iline += 1) {
+        for (let iline = 0; iline < columns; iline += 1) {
             // let pixelBoard = document.querySelector('#pixel-board');
             let pixelBoardLine = document.querySelectorAll('.pixel-line');
             let createPixel = document.createElement('div');
@@ -56,3 +56,16 @@ function createPixelBoard (lines, columns) {
     }
   
 } createPixelBoard (5, 5);
+
+let colorPalette = document.querySelector('#color-palette');
+let black = document.getElementById('black');
+let red = document.getElementById('red');
+let blue = document.getElementById('blue');
+let green = document.getElementById('green');
+let yellow = document.getElementById('yellow');
+
+colorPalette.addEventListener('click', function(event){
+ let selectedColor = document.querySelector('.selected');
+ selectedColor.classList.remove('selected');
+ event.target.classList.add('selected');
+})
