@@ -10,10 +10,17 @@ function createBlack () {
 
 } createBlack ();
 
+function addSelectedClass () {
+
+    let blackSquare = document.getElementById('black');
+    blackSquare.classList.add('selected');
+
+} addSelectedClass();
+
 function squarePalette () {
 
     let colors = document.querySelectorAll('.color');
-    let squareSize = '20px';
+    let squareSize = '40px';
 
     for(let i = 0; i < colors.length; i +=1) {
         colors[i].style.height = squareSize;
@@ -47,19 +54,5 @@ function createPixelBoard (lines, columns) {
             createPixel.style.display = 'inline-block'
         }
     }
-
-    
-    // for (let iline = 0; iline < lines; iline += 1) {
-    //     // let pixelBoard = document.querySelector('#pixel-board');
-    //     let pixelBoardLine = document.querySelectorAll('.pixel-line');
-    //     let createPixel = document.createElement('div');
-    //     createPixel.className = 'pixel';
-    //     pixelBoardLine[iline].appendChild(createPixel);
-    //     createPixel.style.backgroundColor = 'white';
-    //     createPixel.style.border = '1px solid black';
-    //     createPixel.style.height = '40px';
-    //     createPixel.style.width = '40px';
-    //     createPixel.style.display = 'inline-block'
-    // }
-
+  
 } createPixelBoard (5, 5);
