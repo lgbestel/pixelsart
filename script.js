@@ -78,19 +78,34 @@ function selectColor () {
 
 function paint () {
 
-    const pixels = document.querySelectorAll('.pixel');
+    let pixels = document.querySelectorAll('.pixel');
     
     for(let i = 0; i < pixels.length; i += 1) {
         pixels[i].addEventListener('click', function(event) {
-            // let pixel = document.querySelectorAll('.pixel');
-            // let pixelBoard = document.querySelector('#pixel-board');
-            const selectedElement = document.querySelector('.selected');
-
-            const selectedColor = window.getComputedStyle(selectedElement);
+            let selectedElement = document.querySelector('.selected');
+            let selectedColor = window.getComputedStyle(selectedElement);
             let cssColor = selectedColor.getPropertyValue('background-color');
-
-
-        event.target.style.backgroundColor = cssColor;
+            event.target.style.backgroundColor = cssColor;
         })
     }
 } paint ();
+
+function clearButton () {
+
+    let buttonContainer = document.querySelector('#button-container');
+    let createClearButton = document.createElement('button');
+    createClearButton.id = 'clear-board';
+    createClearButton.innerText = 'Limpar';
+    buttonContainer.appendChild(createClearButton);
+
+} clearButton ();
+
+function clearPixel () {
+    let clearButton = document.querySelector('#clear-board');
+    let pixels = document.querySelectorAll('.pixel');
+    clearButton.addEventListener('click', function (){
+        for (let i = 0; i < pixels.length; i += 1) {
+            pixels[i].style.backgroundColor = 'white';
+        }
+    })
+} clearPixel ();
