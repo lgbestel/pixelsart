@@ -21,3 +21,7 @@
 .color-palette {
     display: inline-block;
 }
+
+.pixel-line {
+    background-color: purple;
+}
