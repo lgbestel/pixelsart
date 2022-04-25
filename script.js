@@ -109,3 +109,33 @@ function clearPixel () {
         }
     })
 } clearPixel ();
+
+function boardSize () {
+
+    let buttonContainer = document.querySelector('#button-container');
+    let inputBox = document.createElement('input');
+    inputBox.id = 'board-size';
+    inputBox.type = 'number';
+    inputBox.min = '1';
+    inputBox.max = '50';
+    inputBox.value = '5';
+    buttonContainer.appendChild(inputBox);
+   
+    let btnInputBox = document.createElement('button');
+    btnInputBox.id = 'generate-board';
+    btnInputBox.innerText = 'VQV';
+    buttonContainer.appendChild(btnInputBox);
+
+    // btnInputBox.addEventListener('click', function(
+    //     if (inputBox.innerHTML = ""){
+    //         alert('Board inválido!');
+    //     } else {
+    //         let pixelBoardSize = document.getElementById('board-size').value;  
+    //         createPixelBoard (pixelBoardSize, pixelBoardSize);
+    //     }
+
+    // ))
+    
+
+} boardSize ();
+
