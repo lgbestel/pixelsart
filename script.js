@@ -126,16 +126,32 @@ function boardSize () {
     btnInputBox.innerText = 'VQV';
     buttonContainer.appendChild(btnInputBox);
 
-    // btnInputBox.addEventListener('click', function(
-    //     if (inputBox.innerHTML = ""){
-    //         alert('Board inválido!');
-    //     } else {
-    //         let pixelBoardSize = document.getElementById('board-size').value;  
-    //         createPixelBoard (pixelBoardSize, pixelBoardSize);
-    //     }
-
-    // ))
-    
-
 } boardSize ();
+
+let inputBoxBtn = document.getElementById('generate-board');
+
+    inputBoxBtn.addEventListener('click', function() {
+        let inputBoxValue = document.getElementById('board-size').value;
+        
+        if(inputBoxValue <= 5 && inputBoxValue != '') {
+            inputBoxValue = 5;
+        }
+
+        if(inputBoxValue >= 50) {
+            inputBoxValue = 50;
+        }
+        
+        
+        if (inputBoxValue == ''){
+            alert('Board inválido!');
+        }
+        else 
+        {
+            let pixelBoard = document.getElementById('pixel-board');
+            pixelBoard.innerHTML = '';
+            createPixelBoard (inputBoxValue, inputBoxValue);
+            paint ();
+            clearPixel ();
+        }
+    })
 
