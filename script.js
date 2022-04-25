@@ -57,13 +57,6 @@ function createPixelBoard (lines, columns) {
   
 } createPixelBoard (5, 5);
 
-
-// let black = document.getElementById('black');
-// let red = document.getElementById('red');
-// let blue = document.getElementById('blue');
-// let green = document.getElementById('green');
-// let yellow = document.getElementById('yellow');
-
 function selectColor () {
 
     let colorPalette = document.querySelector('#color-palette');
