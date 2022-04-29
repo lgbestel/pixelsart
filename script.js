@@ -111,7 +111,7 @@ function boardSize () {
     inputBox.type = 'number';
     inputBox.min = '1';
     inputBox.max = '50';
-    inputBox.value = '5';
+    // inputBox.value = '5';
     buttonContainer.appendChild(inputBox);
    
     let btnInputBox = document.createElement('button');
