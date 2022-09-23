@@ -6,6 +6,15 @@ blackDiv.style.backgroundColor = 'black';
 blackDiv.style.border = '1px solid black';
 colorPalette.prepend(blackDiv);
 
+const red = document.getElementById('red');
+red.style.backgroundColor = 'red';
+const blue = document.getElementById('blue');
+blue.style.backgroundColor = 'blue';
+const green = document.getElementById('green');
+green.style.backgroundColor = 'green';
+const yellow = document.getElementById('yellow');
+yellow.style.backgroundColor = 'yellow';
+
 const blackSquare = document.getElementById('black');
 blackSquare.classList.add('selected');
 
@@ -41,7 +50,8 @@ function createPixelBoard(lines, columns) {
 createPixelBoard(5, 5);
 
 function selectColor() {
-  colorPalette.addEventListener('click', (event) => {
+  const colorOptions = document.getElementById('colors');
+  colorOptions.addEventListener('click', (event) => {
     const selectedColor = document.querySelector('.selected');
     selectedColor.classList.remove('selected');
     event.target.classList.add('selected');
@@ -55,6 +65,7 @@ function paint() {
       const selectedElement = document.querySelector('.selected');
       const selectedColor = window.getComputedStyle(selectedElement);
       const cssColor = selectedColor.getPropertyValue('background-color');
+      // eslint-disable-next-line no-param-reassign
       event.target.style.backgroundColor = cssColor;
     });
   }
@@ -116,9 +127,9 @@ const handleBoardSize = () => {
 };
 handleBoardSize();
 
-const red = document.getElementById('red');
-const blue = document.getElementById('blue');
-const green = document.getElementById('green');
+const firstColor = document.getElementById('random1');
+const secondColor = document.getElementById('random2');
+const thirdColor = document.getElementById('random3');
 const randomNumberR = Math.floor(Math.random() * 256);
 const randomNumberG = Math.floor(Math.random() * 256);
 const randomNumberB = Math.floor(Math.random() * 256);
@@ -126,6 +137,6 @@ const randomColorR = `rgb(${randomNumberR},${randomNumberG},${randomNumberB})`;
 const randomColorG = `rgb(${randomNumberB},${randomNumberG},${randomNumberR})`;
 const randomColorB = `rgb(${randomNumberG},${randomNumberR},${randomNumberB})`;
 
-red.style.backgroundColor = randomColorR;
-blue.style.backgroundColor = randomColorB;
-green.style.backgroundColor = randomColorG;
+firstColor.style.backgroundColor = randomColorR;
+secondColor.style.backgroundColor = randomColorB;
+thirdColor.style.backgroundColor = randomColorG;
