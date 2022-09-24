@@ -10,4 +10,6 @@ Criei uma página web que contém uma paleta de cores funcional que poderá ser 
 
 - Manipular o Javascript
 
----
+## URL do projeto
+
+https://lgbestel.github.io/pixelsart/
